@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE configuration PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-config.dtd">
+<configuration>
+	<typeAliases>
+		<!-- 这里的typeAlias表示注册一个pojo的别名，type表示你要注册的pojo 的类的路径， -->
+		<!--alias表示该pojo的别名，我们刚才在上一步骤中使用 的parameterType和resultType的值就是与这里一一对应的 -->
+		<typeAlias type="com.yxp.bean.Tuser1" alias="User" />
+	</typeAliases>
+	<environments default="develop">
+		<environment id="develop">
+			<transactionManager type="jdbc">
+			</transactionManager>
+			<dataSource type="POOLED">
+				<property name="driver" value="com.mysql.jdbc.Driver" />
+				<property name="url" value="jdbc:mysql:///test" />
+				<property name="username" value="root" />
+				<property name="password" value="root" />
+			</dataSource>
+		</environment>
+	</environments>
+		<mappers>
+			<mapper resource="com/yxp/mapper/UserMapper.xml" />
+		</mappers>
+</configuration>

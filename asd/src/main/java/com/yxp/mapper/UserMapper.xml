@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper 
+PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+	<!-- Namespace:表示该xml对应的是哪个mapper文件 -->
+	<mapper namespace="com.yxp.mapper.UserMapper">
+		<!-- Insert:表示一个插入操作,id属性必须与接口中的方法名保持一致,parameterType表示这个方法执行时需要传递的参数 -->
+		<insert id="save" parameterType="User">
+			Insert into tuser(tname,password) values(#{tname},#{password})
+		</insert>
+		<!-- Select:表示一个查询操作,resultType表示该方法的返回类型 -->
+		<select id="findAll" resultType="User" parameterType="User">
+			Select *from tuser
+		</select>
+	</mapper>
